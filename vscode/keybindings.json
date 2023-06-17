@@ -1,0 +1,6 @@
+// Place your key bindings in this file to override the defaults
+[
+  { "key": "cmd+n", "command": "explorer.newFile", "when": "!editorFocus" },
+
+  { "key": "cmd+shift+n", "command": "explorer.newFolder", "when": "!editorFocus" }
+]

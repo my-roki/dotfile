@@ -1,0 +1,60 @@
+{
+  // Theme
+  "workbench.colorTheme": "Atom One Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "D2Coding Nerd",
+  "editor.fontSize": 14,
+  "terminal.integrated.fontFamily": "D2Coding Nerd",
+  "terminal.integrated.fontSize": 14,
+
+  // Terminal Setting
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.cursorBlinking": true,
+  "workbench.colorCustomizations": {
+    "terminalCursor.background": "#E0E0E0",
+    "terminalCursor.foreground": "#E0E0E0",
+    "terminal.ansiBlack": "#666666",
+    "terminal.ansiBlue": "#5c78ff",
+    "terminal.ansiCyan": "#5ac8ff",
+    "terminal.ansiGreen": "#905aff",
+    "terminal.ansiMagenta": "#5ea2ff",
+    "terminal.ansiRed": "#ba5aff",
+    "terminal.ansiWhite": "#ffffff",
+    "terminal.ansiYellow": "#657b83",
+    "terminal.ansiBrightBlack": "#121212",
+    "terminal.ansiBrightBlue": "#2b4fff",
+    "terminal.ansiBrightCyan": "#28b9ff",
+    "terminal.ansiBrightGreen": "#7129ff",
+    "terminal.ansiBrightMagenta": "#2883ff",
+    "terminal.ansiBrightRed": "#a52aff",
+    "terminal.ansiBrightWhite": "#f1f1f1",
+    "terminal.ansiBrightYellow": "#3d2aff"
+  },
+
+  // Editor format
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.rulers": [120],
+  "prettier.printWidth": 120,
+  "[python]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnType": true
+  },
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length", "120"],
+  
+  // 확장자 타입으로 정렬
+  "explorer.sortOrder": "type",
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+
+  // ETC
+  "cSpell.userWords": ["roki"],
+  "cSpell.includeRegExpList": ["comments"],
+  "liveServer.settings.donotVerifyTags": true,
+  "editor.inlineSuggest.enabled": true,
+  "gitlens.gitCommands.skipConfirmations": [
+    "fetch:command",
+    "stash-push:command"
+  ]
+}
