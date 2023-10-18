@@ -2,7 +2,7 @@
 
 # Use custom format
 format = """\
-[╭╴](#808080)$env_var$all\
+[╭╴](#808080)$os$env_var$all\
 [╰─](#808080)$character
 """
 
@@ -10,17 +10,29 @@ format = """\
 add_newline = true
 
 # Change the default prompt characters
+# Replace the "❯" symbol in the prompt with ""
 [character]
 success_symbol = "[](#808080)"
 error_symbol = "[](#808080)"
 
-# Shows an icon that should be included by zshrc script based on the distribution or os
-[env_var.STARSHIP_DISTRO]
-format = "[$env_value ](bold white)"  # removed space between distro and rest for pwsh
-variable = "STARSHIP_DISTRO"
+# os specific configuration
+[os]
+format = '[$symbol](bold white) '   
 disabled = false
 
-# Shows the username
+[os.symbols]
+Windows = " "
+Amazon = " "
+CentOS = " "
+Debian = " "
+Ubuntu = " "
+Macos = " "
+Redhat = " "
+RedHatEnterprise = " "
+Linux = " "
+Unknown = " "
+
+# Shows the hostname of the machine
 [username]
 style_user = "bold white"
 style_root = "bold black"
@@ -28,11 +40,12 @@ format = "[$user]($style) "
 disabled = false  # disable in powershell
 show_always = true
 
-[aws]
-symbol = " "
-style = "#FF9900"
-disabled = true
+# Shows the durantion of the last command execution
+[cmd_duration]
+min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
+format = " took [$duration]($style)"
 
+# Directory format
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
@@ -40,6 +53,12 @@ home_symbol = " ~"
 read_only = "  "
 read_only_style = "197"
 format = "at [$path]($style)[$read_only]($read_only_style) "
+
+# ------------------------------------------------------------
+[aws]
+symbol = " "
+style = "#FF9900"
+disabled = true
 
 [git_branch]
 symbol = " "
@@ -83,3 +102,16 @@ format = "[${symbol}(${version} )]($style) "
 symbol = " "
 style= "white"
 format = "[${symbol}(${version} )]($style) "
+
+[docker_context]
+symbol = " "
+style = "#2396ED"
+format = "[${symbol} ${context}]($style) "
+
+[dart]
+symbol = " "
+style = "#2CB6F6"
+format = "[${symbol}(${version} )]($style) "
+
+[package]
+format = 'via [󰏗 $version](208 bold) '

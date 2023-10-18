@@ -1,3 +1,6 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
 # A Note on Profiling with zsh/zprof
 zmodload zsh/zprof
 
@@ -86,32 +89,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Homebrew
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -125,12 +102,12 @@ eval "$(starship init zsh)"
 
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home -v 17)
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$JAVA_HOME:$PATH"
+export PATH="$JAVA_HOME:$PATH"
 
-alias setJava8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
-alias setJava11='export JAVA_HOME=$(/usr/libexec/java_home -v 11)'
-alias setJava17='export JAVA_HOME=$(/usr/libexec/java_home -v 17)'
-alias setJavaLatest='export JAVA_HOME=$(/usr/libexec/java_home)'
+alias set-java8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
+alias set-java11='export JAVA_HOME=$(/usr/libexec/java_home -v 11)'
+alias set-java17='export JAVA_HOME=$(/usr/libexec/java_home -v 17)'
+alias set-java='export JAVA_HOME=$(/usr/libexec/java_home)'
 
 # nvm
 # https://blog.mattclemente.com/2020/06/26/oh-my-zsh-slow-to-load/\
@@ -144,3 +121,8 @@ export PATH=$HOME/.local/bin:$PATH
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# ngrok
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi

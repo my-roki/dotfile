@@ -112,7 +112,7 @@ Solus = "󰠳 "
 SUSE = " "
 Ubuntu = " "
 Unknown = " "
-Windows = "󰍲 "
+Windows = " "
 
 [package]
 symbol = "󰏗 "
