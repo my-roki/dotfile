@@ -14,12 +14,12 @@
 [color]
 	ui = true
 
-[format]
-	pretty = oneline
-	pretty = format: %C(auto)%h%Creset %C(auto)%ad%Creset %C(auto,green)%aN%Creset %C(auto)%s%Creset
+# [format]
+# 	# pretty = oneline
+# 	# pretty = format: %C(auto)%h%Creset %C(auto)%ad%Creset %C(auto,green)%aN%Creset %C(auto)%s%Creset
 
-[log]
-  	date = relative
+# [log]
+#   	date = relative
 
 [push]
 	default = simple
