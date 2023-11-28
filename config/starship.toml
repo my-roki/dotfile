@@ -1,13 +1,26 @@
 # ~/.config/starship.toml
 
 # Use custom format
-format = """\
+format = """
 [╭╴](#808080)$os$env_var$all\
 [╰─](#808080)$character
 """
 
 # Disable the blank line at the start of the prompt
 add_newline = true
+# Prompt - This is the list of prompt-wide configuration options.
+right_format = """$battery $time"""
+
+[battery]
+full_symbol = " "
+charging_symbol = " "
+discharging_symbol = " "
+unknown_symbol = " "
+empty_symbol = " "
+format = "[$symbol$percentage]($style) "
+
+[[battery.display]]
+threshold = 100
 
 # Change the default prompt characters
 # Replace the "❯" symbol in the prompt with ""
@@ -115,3 +128,10 @@ format = "[${symbol}(${version} )]($style) "
 
 [package]
 format = 'via [󰏗 $version](208 bold) '
+
+[time]
+format = '[\[ $time \]]($style) '
+time_format = "%a %d %b %H:%M:%S"
+use_12hr = false
+utc_time_offset = "local"
+disabled = false
