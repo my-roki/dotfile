@@ -1,3 +1,41 @@
+# This is Git's per-user configuration file.
+[core]
+	name = my-roki
+	email = yoonchangrock@gmail.com
+	excludesfile = /Users/cryoon/.gitignore_global
+	precomposeunicode = true
+	quotepath = false
+
+[alias]
+	logall = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=relative
+	mylog = log --decorate --pretty=oneline --abbrev-commit --date=relative
+	alias = config --get-regexp ^alias\\.
+
+[color]
+	ui = true
+
+[format]
+	pretty = oneline
+	pretty = format: %C(auto)%h%Creset %C(auto)%ad%Creset %C(auto,green)%aN%Creset %C(auto)%s%Creset
+
+[log]
+  	date = relative
+
+[push]
+	default = simple
+
 [user]
 	name = my-roki
 	email = yoonchangrock@gmail.com
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+
+[pull]
+	rebase = false
+
+[init]
+	defaultBranch = main
