@@ -1,4 +1,5 @@
 # ~/.config/starship.toml
+# https://starship.rs/config/#configuration
 
 # Use custom format
 format = """
@@ -110,6 +111,12 @@ format = "[$symbol($version )]($style)"
 symbol = " "
 style = "#EA7B18"
 format = "[${symbol}(${version} )]($style) "
+
+[gradle]
+symbol = "🅶 "
+format = "[${symbol}(${version} )]($style) "
+version_format = "v${raw}"
+style = "#2BB4C5"
 
 [golang]
 symbol = " "
