@@ -1,6 +1,5 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # A Note on Profiling with zsh/zprof
 zmodload zsh/zprof
 
@@ -25,7 +24,7 @@ export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
 plugins=(
   git
-  zsh-nvm
+  # zsh-nvm # -> asdf로 대체 
   zsh-better-npm-completion
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -38,23 +37,24 @@ source $ZSH/oh-my-zsh.sh
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# neofetch - It looks good to me!
-neofetch
+# neofetch is deprecat
+# fastfetch - It looks good to me!
+fastfetch
 
 # starship
 [[ -f ~/.zsh/starship.zsh ]] && source ~/.zsh/starship.zsh
 eval "$(starship init zsh)"
 
-# Java
-export JAVA_HOME=$(/usr/libexec/java_home -v 17)
-export PATH="$JAVA_HOME:$PATH"
+# # Java -> asdf로 대체
+# export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+# export PATH="$JAVA_HOME:$PATH"
 
-alias set-java8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
-alias set-java11='export JAVA_HOME=$(/usr/libexec/java_home -v 11)'
-alias set-java17='export JAVA_HOME=$(/usr/libexec/java_home -v 17)'
-alias set-java='export JAVA_HOME=$(/usr/libexec/java_home)'
+# alias set-java8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
+# alias set-java11='export JAVA_HOME=$(/usr/libexec/java_home -v 11)'
+# alias set-java17='export JAVA_HOME=$(/usr/libexec/java_home -v 17)'
+# alias set-java='export JAVA_HOME=$(/usr/libexec/java_home)'
 
-# nvm
+# # nvm -> zsh-nvm로 대체
 # https://blog.mattclemente.com/2020/06/26/oh-my-zsh-slow-to-load/\
 # https://github.com/lukechilds/zsh-nvm
 # export NVM_DIR="$HOME/.nvm"
@@ -69,5 +69,17 @@ if command -v ngrok &>/dev/null; then
   eval "$(ngrok completion)"
 fi
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+# asdf
+. "$HOME/.asdf/asdf.sh"
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+# To set JAVA_HOME in your shell's initialization add the following:
+# . ~/.asdf/plugins/java/set-java-home.bash
+# For zsh shell, instead use:
+. ~/.asdf/plugins/java/set-java-home.zsh
+
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"

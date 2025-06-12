@@ -99,7 +99,7 @@ deleted = " "
 [python]
 symbol = " "
 style= "#FFE873"
-format = "[${symbol}${version}]($style) "
+format = "[${symbol}${version}]($style)"
 python_binary = "python3"
 
 [nodejs]
@@ -110,34 +110,40 @@ format = "[$symbol($version )]($style)"
 [java]
 symbol = " "
 style = "#EA7B18"
-format = "[${symbol}(${version} )]($style) "
+format = "[${symbol}(${version} )]($style)"
+
+[kotlin]
+# symbol = " "
+symbol = "🅺 "
+style = "#6A46D2"
+format = "via [$symbol($version )]($style)"
 
 [gradle]
 symbol = "🅶 "
-format = "[${symbol}(${version} )]($style) "
+format = "[${symbol}(${version} )]($style)"
 version_format = "v${raw}"
 style = "#2BB4C5"
 
 [golang]
 symbol = " "
 style= "white"
-format = "[${symbol}(${version} )]($style) "
+format = "[${symbol}(${version} )]($style)"
 
 [docker_context]
 symbol = " "
 style = "#2396ED"
-format = "[${symbol} ${context}]($style) "
+format = "[${symbol} ${context}]($style)"
 
 [dart]
 symbol = " "
 style = "#2CB6F6"
-format = "[${symbol}(${version} )]($style) "
+format = "[${symbol}(${version} )]($style)"
 
 [package]
-format = 'via [󰏗 $version](208 bold) '
+format = 'via [󰏗 $version](208 bold)'
 
 [time]
-format = '[\[ $time \]]($style) '
+format = '[\[ $time \]]($style)'
 time_format = "%a %d %b %H:%M:%S"
 use_12hr = false
 utc_time_offset = "local"
