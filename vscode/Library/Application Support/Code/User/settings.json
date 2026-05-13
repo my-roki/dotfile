@@ -98,7 +98,10 @@
 
   // 공백/탭 정리
   "editor.trimAutoWhitespace": true,
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
+  "terminal.integrated.env.osx": {
+    "Q_NEW_SESSION": "1"
+  }
 
   // Uncategorize
 }
