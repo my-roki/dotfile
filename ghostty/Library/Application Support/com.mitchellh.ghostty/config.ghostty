@@ -2,32 +2,28 @@
 # Appearance
 # ================================
 theme = Catppuccin Mocha
-
 font-family = D2Coding Nerd
 font-size = 16
-
 window-padding-x = 8
 window-padding-y = 8
 window-decoration = true
+window-width = 96
+window-height = 24
 macos-titlebar-style = tabs
-
 background-opacity = 0.9
 background-blur-radius = 20
-
 cursor-style = underline
 cursor-style-blink = false
-
-unfocused-split-opacity = 0.2
+unfocused-split-opacity = 0.5
 
 # ================================
 # Performance/Operation
 # ================================
 scrollback-limit = 10000
-
 mouse-hide-while-typing = true
-copy-on-select = true
-clipboard-paste-protection = false
+copy-on-select = clipboard
 link-url = true
+image-storage-limit = 320000000
 
 # ================================
 # macOS
@@ -38,12 +34,7 @@ macos-option-as-alt = true
 # Shell Integration
 # ================================
 shell-integration = zsh
-shell-integration-features = cursor,sudo,title
-
-# ================================
-# SSH
-# ================================
-shell-integration-features = ssh-env
+shell-integration-features = cursor,sudo,title,ssh-env
 
 # ================================
 # Keybindings
