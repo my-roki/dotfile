@@ -1,0 +1,153 @@
+# ~/.config/starship.toml
+# https://starship.rs/config/#configuration
+
+# Set the timeout to n milliseconds (1000 = 1sec)
+command_timeout = 3000
+
+# Use custom format
+format = """
+[╭╴](#808080)$os$env_var$all\
+[╰─](#808080)$character
+"""
+
+# Disable the blank line at the start of the prompt
+add_newline = true
+# Prompt - This is the list of prompt-wide configuration options.
+right_format = """$battery $time"""
+
+[battery]
+full_symbol = ' '
+charging_symbol = ' '
+discharging_symbol = ' '
+unknown_symbol = ' '
+empty_symbol = ' '
+format = '[$symbol$percentage]($style) '
+
+[[battery.display]]
+threshold = 100
+
+# Change the default prompt characters
+# Replace the '❯' symbol in the prompt with ''
+[character]
+success_symbol = '[](#808080)'
+error_symbol = '[](#808080)'
+
+# os specific configuration
+[os]
+format = '[$symbol](bold white) '   
+disabled = false
+
+[os.symbols]
+Windows = ' '
+Amazon = ' '
+CentOS = ' '
+Debian = ' '
+Ubuntu = ' '
+Macos = ' '
+Redhat = ' '
+RedHatEnterprise = ' '
+Linux = ' '
+Unknown = ' '
+
+# Shows the hostname of the machine
+[username]
+style_user = 'bold white'
+style_root = 'bold black'
+format = '[$user]($style) '
+disabled = false  # disable in powershell
+show_always = true
+
+# Shows the durantion of the last command execution
+[cmd_duration]
+min_time = 2_000  # Show command duration over n milliseconds (2_000 = 2sec)
+format = ' took [$duration]($style)'
+
+# Directory format
+[directory]
+truncation_length = 3
+truncation_symbol = '…/'
+home_symbol = ' ~'
+read_only = '  '
+read_only_style = '197'
+format = 'at [$path]($style)[$read_only]($read_only_style) '
+
+# ------------------------------------------------------------
+[aws]
+symbol = ' '
+style = '#FF9900'
+disabled = true
+
+[git_branch]
+symbol = ' '
+style = 'green bold'
+format = 'on [$symbol$branch(:$remote_branch)]($style) '
+truncation_length = 8
+truncation_symbol = '…/'
+
+[git_status]
+format = '[\($all_status$ahead_behind\)]($style) '
+style = 'bold green'
+conflicted = ' '
+up_to_date = ' '
+untracked = ' '
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+stashed = ' '
+modified = ' '
+staged = '[++\($count\)](green)'
+renamed = '襁 '
+deleted = ' '
+
+[python]
+symbol = ' '
+style= '#FFE873'
+format = '[${symbol}${version} (\($virtualenv\) )]($style) '
+python_binary = 'python3'
+
+[nodejs]
+symbol = ' '
+style= '#5FA04E'
+format = '[$symbol($version )]($style) '
+
+[java]
+symbol = ' '
+style = '#EA7B18'
+format = '[${symbol}(${version} )]($style) '
+
+[kotlin]
+# symbol = ' '
+symbol = '🅺 '
+style = '#6A46D2'
+format = 'via [$symbol($version )]($style) '
+
+[gradle]
+symbol = '🅶 '
+format = '[${symbol}(${version} )]($style) '
+version_format = 'v${raw}'
+style = '#2BB4C5'
+
+[golang]
+symbol = ' '
+style= 'white'
+format = '[${symbol}(${version} )]($style) '
+
+[docker_context]
+symbol = ' '
+style = '#2396ED'
+format = '[${symbol} ${context}]($style) '
+
+[dart]
+symbol = ' '
+style = '#2CB6F6'
+format = '[${symbol}(${version} )]($style) '
+
+[package]
+format = 'via [󰏗 $version](208 bold) '
+
+[time]
+format = '[\[ $time \]]($style)'
+time_format = '%a %d %b %H:%M:%S'
+use_12hr = false
+utc_time_offset = 'local'
+disabled = false

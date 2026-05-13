@@ -1,0 +1,105 @@
+# ================================
+# OS generated files
+# ================================
+# macOS
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+Icon
+._*
+
+# Windows
+Desktop.ini
+ehthumbs.db
+Thumbs.db
+
+
+# ================================
+# Editor / IDE
+# ================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# Neovim
+*.un~
+Session.vim
+*.swp
+
+# JetBrains
+.idea/
+*.iml
+*.iws
+
+# Vim
+*.orig
+
+
+# ================================
+# Environment Variables
+# ================================
+.env
+.env.local
+.env.*.local
+
+
+# ================================
+# Compiled source
+# ================================
+*.com
+*.out
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.pyc
+*.pyo
+
+
+# ================================
+# Packages & Archives
+# ================================
+*.7z
+*.dmg
+*.gz
+*.iso
+*.rar
+*.tar
+*.zip
+
+
+# ================================
+# Logs & Databases
+# ================================
+*.log
+
+
+# ================================
+# Language / Runtime
+# ================================
+# Node
+node_modules/
+.npm
+
+# Python
+__pycache__/
+.venv/
+venv/
+
+# Java
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# Vagrant
+.vagrant
