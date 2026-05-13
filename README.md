@@ -1,74 +1,112 @@
-# dotfile
+# dotfiles
 
-My configs and settings (or themes...)
+My personal development environment configuration files.
+Managed with [GNU Stow](https://www.gnu.org/software/stow/) to quickly set up a consistent environment on any new machine.
 
-## 1. Clone repository
+## Structure
 
-Clone this repository to your home directory
-
-```bash
-git clone <dotfile_url> $HOME/.dotfiles
+```
+~/.dotfiles/
+├── ghostty/        # Ghostty terminal config
+├── git/            # .gitconfig, .gitignore_global
+├── ssh/            # .ssh/config
+├── starship/       # starship.toml, nerd-font-symbols.toml
+├── vscode/         # settings.json, keybindings.json
+├── zsh/            # .zshrc
+├── install.sh      # Setup script
+└── README.md
 ```
 
-## 2. Brewfiles
+## How It Works
 
-In macOS, you can use [Homebrew](https://brew.sh/) to install packages.
-First, you need to [install Homebrew](https://brew.sh/). And if you want to install all the packages in the Brewfile, run the following command.
+This repo uses [GNU Stow](https://www.gnu.org/software/stow/) to manage symlinks.
+Each folder mirrors the structure of the home directory (`~`),
+so running `stow <folder>` automatically creates symlinks in the correct locations.
 
-### 2.1. backup Brewfile
-
-In your old computer, you can backup Brewfile.
-
-```bash
-brew bundle dump --file=$HOME/.dotfiles/Brewfile
+Example:
+```
+~/.dotfiles/zsh/.zshrc
+    ↓ stow zsh
+~/.zshrc (symlink)
 ```
 
-### 2.2. install packages
-
-In your new computer, you can install packages.
+## Quick Start
 
 ```bash
-brew update
-brew tap homebrew/bundle
-brew bundle --file=$HOME/.dotfiles/Brewfile
-brew cleanup
-brew cask cleanup
+git clone <repo_url> ~/.dotfiles
+cd ~/.dotfiles
+./install.sh
 ```
 
-## 2. Symlink files
+## Manual Setup
 
-### Global `.gitignore` and `.gitconfig`
+### 1. Install Homebrew
 
 ```bash
-[ ! -f $HOME/.gitconfig ] && ln -nfs $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
-[ ! -f $HOME/.gitignore_global ] && ln -nfs $HOME/.dotfiles/.gitignore_global $HOME/.gitignore_global
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+### 2. Clone the Repository
 
 ```bash
-git config --global core.excludesfile $HOME/.gitignore_global
+git clone <repo_url> ~/.dotfiles
 ```
 
-### Shell config `.bashrc` and `.zshrc`
+### 3. Install Stow
 
 ```bash
-[ ! -f $HOME/.bashrc ] && ln -nfs $HOME/.dotfiles/.bashrc $HOME/.bashrc
-[ ! -f $HOME/.zshrc ] && ln -nfs $HOME/.dotfiles/.zshrc $HOME/.zshrc
+brew install stow
 ```
 
-### Starship.rs config
-
-[Starship.rs](https://starship.rs/) is a cross-shell prompt for user.
+### 4. Create Symlinks
 
 ```bash
-[ ! -f $HOME/.config/starship.toml ] && ln -nfs $HOME/.dotfiles/.config/starship.toml $HOME/.config/starship.toml
+cd ~/.dotfiles
+stow ghostty
+stow git
+stow ssh
+stow starship
+stow vscode
+stow zsh
 ```
 
+### 5. Install Packages
+
+Dump the current package list on your old machine:
 ```bash
-[ ! -f $HOME/.config/starship.toml ] && ln -nfs $HOME/.dotfiles/.config/nerd-font-symbols.toml $HOME/.config/nerd-font-symbols.toml
+brew bundle dump --file=~/.dotfiles/Brewfile
 ```
 
-### SSH files
-
+Install on the new machine:
 ```bash
-[ ! -f $HOME/.ssh/config ] && ln -nfs $HOME/.dotfiles/.ssh/config $HOME/.ssh/config
+brew bundle --file=~/.dotfiles/Brewfile
 ```
+
+### 6. Set Up Sensitive Information
+
+Git user info is not included in this repo. Set it up manually:
+```bash
+cat > ~/.gitconfig.local <<-EOF
+[user]
+    name = Your Name
+    email = your@email.com
+EOF
+```
+
+## Configuration Files
+
+| File | Description |
+|------|-------------|
+| `zsh/.zshrc` | zsh config, plugins, and aliases |
+| `starship/starship.toml` | Terminal prompt theme |
+| `git/.gitconfig` | Global git config |
+| `git/.gitignore_global` | Global git ignore rules |
+| `ssh/config` | SSH host config |
+| `ghostty/config` | Ghostty terminal config |
+| `vscode/settings.json` | VSCode / Antigravity settings |
+| `vscode/keybindings.json` | VSCode / Antigravity keybindings |
+
+## Notes
+
+- `~/.gitconfig.local` — Contains git user info (sensitive, not tracked by git)
+- `~/.ssh/id_rsa` — SSH private key (never commit this!)
