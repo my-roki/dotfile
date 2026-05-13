@@ -1,0 +1,10 @@
+// Place your key bindings in this file to override the defaults
+[
+  { "key": "cmd+n", "command": "explorer.newFile", "when": "!editorFocus" },
+  { "key": "cmd+shift+n", "command": "explorer.newFolder", "when": "!editorFocus" },
+  { "key": "shift+enter", "command": "workbench.action.terminal.sendSequence", "args": {"text": "\u001b\r"}, "when": "terminalFocus"},
+  { "key": "cmd+b", "command": "workbench.action.toggleSidebarVisibility" },
+  { "key": "cmd+`", "command": "workbench.action.terminal.toggleTerminal" },
+  { "key": "cmd+shift+]", "command": "workbench.action.nextEditor" },
+  { "key": "cmd+shift+[", "command": "workbench.action.previousEditor" }
+]

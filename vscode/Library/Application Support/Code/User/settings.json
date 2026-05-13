@@ -1,0 +1,104 @@
+{
+  // Appearance
+  "workbench.colorTheme": "Atom One Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "D2Coding Nerd",
+  "editor.fontSize": 14,
+  "terminal.integrated.fontFamily": "D2Coding Nerd",
+  "terminal.integrated.fontSize": 14,
+  "editor.bracketPairColorization.enabled": true,
+
+  // Terminal Setting
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.cursorBlinking": true,
+  "workbench.colorCustomizations": {
+    "terminalCursor.background": "#1a1a1a",
+    "terminalCursor.foreground": "#f1f1f1",
+    "terminal.ansiBlack": "#000000",
+    "terminal.ansiBlue": "#e081f0",
+    "terminal.ansiCyan": "#2a276c",
+    "terminal.ansiGreen": "#948af7",
+    "terminal.ansiMagenta": "#8a45bd",
+    "terminal.ansiRed": "#5f75f7",
+    "terminal.ansiWhite": "#ffffff",
+    "terminal.ansiYellow": "#a578f2",
+    "terminal.ansiBrightBlack": "#4c4c4c",
+    "terminal.ansiBrightBlue": "#f3c6fb",
+    "terminal.ansiBrightCyan": "#4B497E",
+    "terminal.ansiBrightGreen": "#cec9fc",
+    "terminal.ansiBrightMagenta": "#b081d2",
+    "terminal.ansiBrightRed": "#96a4f7",
+    "terminal.ansiBrightWhite": "#f8f8f0",
+    "terminal.ansiBrightYellow": "#ceb4fa"
+  },
+
+  // Editor format
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.printWidth": 120,
+  "explorer.sortOrder": "type",
+  "editor.rulers": [256],
+  "editor.inlineSuggest.enabled": true,
+  "editor.accessibilitySupport": "on",
+
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnType": true
+  },
+  "black-formatter.args": ["--line-length", "120"],
+
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+
+  // jupyternotebook
+  "notebook.output.wordWrap": true,
+  "notebook.lineNumbers": "on",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "right"
+  },
+
+  // Github
+  "git.autofetch": true,
+  "git.openRepositoryInParentFolders": "always",
+  "github.copilot.enable": {
+    "*": false
+  },
+  "gitlens.gitCommands.skipConfirmations": ["fetch:command", "stash-push:command"],
+
+  // ETC
+  "cSpell.userWords": ["roki"],
+  "cSpell.includeRegExpList": ["comments"],
+  "liveServer.settings.donotVerifyTags": true,
+  "redhat.telemetry.enabled": false,
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.json": "default"
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "editor.codeActionsOnSave": {},
+  "terminal.integrated.mouseWheelScrollSensitivity": 3,
+
+  // 공백/탭 정리
+  "editor.trimAutoWhitespace": true,
+  "files.trimTrailingWhitespace": true
+
+  // Uncategorize
+}
