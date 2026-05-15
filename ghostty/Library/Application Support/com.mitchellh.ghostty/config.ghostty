@@ -1,7 +1,37 @@
+# Ghostty Color Theme (Summer Night)
+# Add this in your Ghostty config: ~/.config/ghostty/config
+
+background = #1a1a1a
+foreground = #f1f1f1
+cursor-color = #c7c7c7
+
+selection-background = #c1cbff
+selection-foreground = #000000
+
+# ANSI Colors (Normal)
+palette = 0=#000000
+palette = 1=#b547e7
+palette = 2=#bb91e7
+palette = 3=#edc6f5
+palette = 4=#f2daed
+palette = 5=#fcc0cd
+palette = 6=#fc8e9b
+palette = 7=#f8f8f0
+
+# ANSI Colors (Bright)
+palette = 8=#4c4c4c
+palette = 9=#fc8e9b
+palette = 10=#fcc0cd
+palette = 11=#f2daed
+palette = 12=#edc6f5
+palette = 13=#bb91e7
+palette = 14=#b547e7
+palette = 15=#f8f8f0
+
+
 # ================================
 # Appearance
 # ================================
-theme = Catppuccin Mocha
 font-family = D2Coding Nerd
 font-size = 16
 window-padding-x = 8
@@ -50,3 +80,6 @@ keybind = cmd+left=previous_tab
 keybind = cmd+right=next_tab
 keybind = cmd+shift+enter=toggle_split_zoom
 keybind = cmd+shift+r=reload_config
+
+
+
