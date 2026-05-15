@@ -132,7 +132,7 @@ alias ...="cd ../.."
 
 alias ip="curl ifconfig.me"         # 외부 IP 확인
 alias ports="lsof -i -P -n"         # 열린 포트 확인
-alias reload="exec zship"           # zshrc 리로드
+alias reload="exec zsh"             # zsh 리로드
 alias zshrc="code ~/.zshrc"         # zshrc 편집
 
 # ================================
