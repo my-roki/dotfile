@@ -1,0 +1,29 @@
+# Ghostty Color Theme (Strong Fall)
+# Add this in your Ghostty config theme
+
+background = #1a1a1a
+foreground = #f1f1f1
+cursor-color = #c7c7c7
+
+selection-background = #c1deff
+selection-foreground = #000000
+
+# ANSI Colors (Normal)
+palette = 0=#000000
+palette = 1=#c33431
+palette = 2=#008460
+palette = 3=#c0b400
+palette = 4=#1d4490
+palette = 5=#ad365b
+palette = 6=#02c2cc
+palette = 7=#ffffff
+
+# ANSI Colors (Bright)
+palette = 8=#4c4c4c
+palette = 9=#db5451
+palette = 10=#05a579
+palette = 11=#eee006
+palette = 12=#35589d
+palette = 13=#c95377
+palette = 14=#26ccd3
+palette = 15=#cccccc

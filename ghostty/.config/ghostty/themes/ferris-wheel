@@ -1,0 +1,29 @@
+# Ghostty Color Theme (Ferris Wheel)
+# Add this in your Ghostty config theme
+
+background = #1a1a1a
+foreground = #f1f1f1
+cursor-color = #c7c7c7
+
+selection-background = #c1deff
+selection-foreground = #000000
+
+# ANSI Colors (Normal)
+palette = 0=#000000
+palette = 1=#5f75f7
+palette = 2=#948af7
+palette = 3=#a578f2
+palette = 4=#e081f0
+palette = 5=#8a45bd
+palette = 6=#2a276c
+palette = 7=#f8f8f0
+
+# ANSI Colors (Bright)
+palette = 8=#4c4c4c
+palette = 9=#96a4f7
+palette = 10=#cec9fc
+palette = 11=#ceb4fa
+palette = 12=#f3c6fb
+palette = 13=#b081d2
+palette = 14=#706f90
+palette = 15=#f8f8f0
